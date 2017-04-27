@@ -43,5 +43,22 @@ done
 # remove a trailing slash from the url if it exists
 URL=${URL%/}
 
+# return value
+retval = 0
+
 # upload to artifactory
 curl --insecure -H 'X-JFrog-Art-Api: '$KEY'' -T $FILE "$URL/$FILE"
+
+retval=$(( $retval + $? ))
+
+echo ""
+echo "================================================================================"
+echo ""
+echo "Finished publish to artifactory attempt with return code $retval"
+echo ""
+echo "Attempted to deploy file/directory $FILE"
+echo "To $URL"
+echo ""
+echo "================================================================================"
+
+exit $retval
