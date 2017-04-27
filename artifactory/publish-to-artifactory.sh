@@ -10,9 +10,7 @@ OPTIONS
     The API Key that will be used to deploy to artifactory
 
   -f FILE
-    The file we want to upload to artifactory, can be a directory.
-
-    This will also be the directory/file structure within the destination URL
+    The file we want to upload to artifactory
 
   -u URL
     The artifactory URL we want to publish to
@@ -56,7 +54,7 @@ echo "==========================================================================
 echo ""
 echo "Finished publish to artifactory attempt with return code $retval"
 echo ""
-echo "Attempted to deploy file/directory $FILE"
+echo "Attempted to deploy file $FILE"
 echo "To $URL"
 echo ""
 echo "================================================================================"
